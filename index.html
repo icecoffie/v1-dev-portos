@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Professional Developer Portfolio - Modern &amp; Interactive CV - v2</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Professional Portfolio - Developer CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        tajawal: ['Tajawal', 'sans-serif'],
+                        code: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        dev: {
+                            primary: '#c084fc',
+                            secondary: '#a78bfa',
+                            accent: '#fbbf24',
+                            cyan: '#67e8f9',
+                            green: '#86efac',
+                            bg: '#0f172a',
+                            deeper: '#020617',
+                            card: '#1e293b',
+                            hover: '#334155',
+                            border: '#334155',
+                            heading: '#f1f5f9',
+                            body: '#cbd5e1',
+                            muted: '#94a3b8',
+                        },
+                    },
+                    backgroundImage: {
+                        'gradient-dev': 'linear-gradient(135deg, #c084fc 0%, #a78bfa 50%, #67e8f9 100%)',
+                        'gradient-dev-2': 'linear-gradient(135deg, #67e8f9 0%, #a78bfa 50%, #fbbf24 100%)',
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient-dev {
+                @apply bg-clip-text text-transparent bg-gradient-to-br from-dev-primary via-dev-secondary to-dev-cyan;
+            }
+            .glow-primary {
+                box-shadow: 0 0 40px rgba(192, 132, 252, 0.25);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="css/extras.css">
+</head>
+<body class="font-tajawal font-medium antialiased bg-white text-slate-900 transition-colors duration-300 dark:bg-dev-deeper dark:text-dev-heading overflow-x-hidden">
+
+    <!-- Loader — minimal, calm -->
+    <div id="loader" class="fixed inset-0 z-[10000] flex items-center justify-center" role="status" aria-live="polite" aria-busy="true">
+        <div class="absolute inset-0 bg-slate-100/88 dark:bg-dev-deeper/92 backdrop-blur-[8px]"></div>
+        <div class="loader-minimal relative z-10 w-full max-w-[340px] px-6 sm:px-8">
+            <div class="loader-minimal-inner opacity-0 translate-y-1">
+                <p class="text-center text-[11px] font-medium uppercase tracking-[0.28em] text-slate-400 dark:text-dev-muted mb-5">Loading</p>
+                <div class="rounded-xl border border-slate-200/90 dark:border-dev-border/55 bg-white/70 dark:bg-dev-card/35 px-4 py-4 shadow-sm">
+                    <pre class="font-code text-[11px] sm:text-xs leading-[1.65] text-slate-600 dark:text-dev-body text-left rtl:text-right whitespace-pre-wrap m-0 overflow-x-auto"><span class="text-dev-secondary dark:text-dev-cyan">const</span> portfolio = {
+
+  <span class="text-dev-primary">loading</span>: <span class="text-dev-accent">true</span>,
+
+  <span class="text-dev-primary">status</span>: <span class="text-dev-green">'initializing...'</span>
+
+};</pre>
+                </div>
+                <div class="mt-6 h-0.5 rounded-full bg-slate-200/90 dark:bg-dev-border/80 overflow-hidden">
+                    <div id="loaderBar" class="h-full w-0 rounded-full bg-gradient-to-r from-dev-primary/85 to-dev-cyan/85"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="site-header fixed top-0 inset-x-0 z-[1000] border-b border-slate-200/70 bg-white/75 backdrop-blur-2xl backdrop-saturate-150 transition-[box-shadow,border-color,background-color] duration-300 dark:border-white/[0.07] dark:bg-dev-bg/75">
+        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-dev-primary/25 to-transparent dark:via-dev-cyan/20"></div>
+        <nav class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-[4.25rem] flex items-center justify-between gap-3 md:gap-6" aria-label="Primary">
+            <a href="#home" class="nav-brand group flex items-center gap-2 rounded-2xl border border-slate-200/80 bg-white/60 px-3 py-2 font-extrabold text-base md:text-lg text-slate-800 shadow-sm transition-all duration-300 hover:border-dev-primary/35 hover:bg-white/90 hover:shadow-md dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-dev-heading dark:hover:border-dev-cyan/30 dark:hover:bg-white/[0.07] shrink-0">
+                <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-dev-primary/20 to-dev-cyan/15 text-dev-cyan ring-1 ring-dev-primary/20 transition-transform duration-300 group-hover:scale-105 dark:from-dev-primary/25 dark:to-dev-cyan/10">
+                    <i class="fas fa-code text-sm" aria-hidden="true"></i>
+                </span>
+                <span class="flex items-center gap-0.5 font-code tracking-tight">
+                    <span class="text-dev-cyan">&lt;</span><span class="text-gradient-dev">Dev</span><span class="text-dev-cyan">/&gt;</span>
+                </span>
+            </a>
+
+            <div id="navMenu" class="nav-panel nav-panel--drawer flex flex-col md:flex-row md:items-center md:justify-center md:flex-1 md:min-w-0 gap-1 md:gap-0.5 p-6 md:p-0">
+                <a href="#home" class="nav-link flex items-center gap-2.5 px-3.5 py-2.5 md:py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-dev-body transition-colors duration-200 hover:text-dev-primary dark:hover:text-dev-cyan md:rounded-lg" data-section="home">
+                    <i class="fas fa-home w-4 text-center text-[13px] opacity-60 nav-link-icon"></i>
+                    <span data-text-en="Home" data-text-ar="الرئيسية">Home</span>
+                </a>
+                <a href="#about" class="nav-link flex items-center gap-2.5 px-3.5 py-2.5 md:py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-dev-body transition-colors duration-200 hover:text-dev-primary dark:hover:text-dev-cyan md:rounded-lg" data-section="about">
+                    <i class="fas fa-user w-4 text-center text-[13px] opacity-60 nav-link-icon"></i>
+                    <span data-text-en="About" data-text-ar="عني">About</span>
+                </a>
+                <a href="#skills" class="nav-link flex items-center gap-2.5 px-3.5 py-2.5 md:py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-dev-body transition-colors duration-200 hover:text-dev-primary dark:hover:text-dev-cyan md:rounded-lg" data-section="skills">
+                    <i class="fas fa-code w-4 text-center text-[13px] opacity-60 nav-link-icon"></i>
+                    <span data-text-en="Skills" data-text-ar="المهارات">Skills</span>
+                </a>
+                <a href="#experience" class="nav-link flex items-center gap-2.5 px-3.5 py-2.5 md:py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-dev-body transition-colors duration-200 hover:text-dev-primary dark:hover:text-dev-cyan md:rounded-lg" data-section="experience">
+                    <i class="fas fa-briefcase w-4 text-center text-[13px] opacity-60 nav-link-icon"></i>
+                    <span data-text-en="Experience" data-text-ar="الخبرة">Experience</span>
+                </a>
+                <a href="#projects" class="nav-link flex items-center gap-2.5 px-3.5 py-2.5 md:py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-dev-body transition-colors duration-200 hover:text-dev-primary dark:hover:text-dev-cyan md:rounded-lg" data-section="projects">
+                    <i class="fas fa-rocket w-4 text-center text-[13px] opacity-60 nav-link-icon"></i>
+                    <span data-text-en="Projects" data-text-ar="المشاريع">Projects</span>
+                </a>
+                <a href="#contact" class="nav-link flex items-center gap-2.5 px-3.5 py-2.5 md:py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-dev-body transition-colors duration-200 hover:text-dev-primary dark:hover:text-dev-cyan md:rounded-lg" data-section="contact">
+                    <i class="fas fa-envelope w-4 text-center text-[13px] opacity-60 nav-link-icon"></i>
+                    <span data-text-en="Contact" data-text-ar="التواصل">Contact</span>
+                </a>
+            </div>
+
+            <div class="header-toolbar flex items-center gap-2 shrink-0">
+                <div class="flex items-center rounded-2xl border border-slate-200/90 bg-slate-50/90 p-1 shadow-inner dark:border-white/[0.08] dark:bg-dev-deeper/60 dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
+                    <button type="button" id="langToggle" class="inline-flex items-center gap-1.5 sm:gap-2 rounded-xl px-2.5 py-2 sm:px-3 text-xs font-bold text-slate-700 transition-colors duration-200 hover:bg-white hover:text-dev-primary dark:text-dev-body dark:hover:bg-white/10 dark:hover:text-dev-cyan" title="Language">
+                        <i class="fas fa-language text-dev-cyan text-sm" aria-hidden="true"></i>
+                        <span class="lang-label tabular-nums">AR</span>
+                    </button>
+                    <span class="mx-0.5 h-5 w-px shrink-0 bg-slate-200/90 dark:bg-white/10" aria-hidden="true"></span>
+                    <button type="button" id="themeToggle" class="theme-toggle relative h-9 w-[3.5rem] sm:w-[3.65rem] shrink-0 rounded-xl border border-transparent outline-none transition-[box-shadow] focus-visible:ring-2 focus-visible:ring-dev-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-dev-bg" title="Theme" aria-label="Toggle color theme">
+                        <span class="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-b from-slate-200/80 to-slate-300/40 dark:from-dev-border/80 dark:to-dev-deeper/90"></span>
+                        <span class="theme-toggle-knob absolute top-1/2 z-[1] flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-lg bg-white text-slate-600 shadow-md ring-1 ring-black/[0.06] dark:bg-dev-card dark:ring-white/10">
+                            <i class="fas fa-moon theme-icon-moon text-[13px] text-dev-cyan" aria-hidden="true"></i>
+                            <i class="fas fa-sun theme-icon-sun hidden text-[13px] text-amber-500" aria-hidden="true"></i>
+                        </span>
+                        <span class="pointer-events-none relative z-0 hidden sm:flex h-9 w-full items-center justify-between px-2 text-[9px] font-bold uppercase tracking-wider text-slate-500/80 dark:text-dev-muted/90" aria-hidden="true">
+                            <span>Light</span>
+                            <span>Dark</span>
+                        </span>
+                    </button>
+                </div>
+
+                <button type="button" id="menuToggle" class="menu-toggle md:hidden inline-flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-xl border border-slate-200/90 bg-slate-50/90 text-slate-700 shadow-sm transition-all hover:border-dev-primary/40 hover:bg-white dark:border-white/[0.08] dark:bg-dev-deeper/70 dark:text-dev-body dark:hover:border-dev-cyan/35" aria-label="Menu" aria-expanded="false">
+                    <span class="menu-bar-1 block h-0.5 w-[1.125rem] rounded-full bg-current transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"></span>
+                    <span class="menu-bar-2 block h-0.5 w-[1.125rem] rounded-full bg-current transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-16 md:pt-[4.25rem]">
+        <!-- Hero -->
+        <section id="home" class="relative min-h-0 flex items-start overflow-hidden pt-8 pb-12 md:pt-10 md:pb-14 lg:pt-12 lg:pb-16">
+            <div class="hero-bg absolute inset-0 pointer-events-none">
+                <div class="absolute inset-0 bg-[radial-gradient(ellipse_90%_55%_at_50%_-15%,rgba(192,132,252,0.22),transparent)] dark:bg-[radial-gradient(ellipse_90%_55%_at_50%_-15%,rgba(192,132,252,0.14),transparent)]"></div>
+                <div class="code-grid absolute inset-0 opacity-[0.35] dark:opacity-[0.2]"></div>
+                <canvas id="heroNoise" class="absolute inset-0 w-full h-full opacity-30 dark:opacity-40 mix-blend-overlay"></canvas>
+            </div>
+            <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10 lg:py-12">
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+                    <div class="hero-content space-y-2.5 md:space-y-3 max-w-2xl">
+                        <div class="hero-el flex items-center gap-3">
+                            <span class="hero-terminal-cursor hidden sm:block w-2 h-8 rounded-sm bg-gradient-to-b from-dev-cyan to-dev-primary shadow-[0_0_12px_rgba(103,232,249,0.6)]"></span>
+                            <p class="text-sm md:text-base font-bold text-dev-secondary dark:text-dev-cyan uppercase tracking-[0.22em] leading-snug">
+                                <span id="heroGreeting" data-text-en="Hello, I'm" data-text-ar="مرحباً، أنا">Hello, I'm</span>
+                            </p>
+                            <span class="font-code text-[10px] text-dev-muted/80 px-2 py-0.5 rounded border border-dev-border/60 hidden md:inline leading-none" id="heroLiveTag">LIVE</span>
+                        </div>
+                        <h1 class="hero-el hero-morph-lock font-code text-3xl sm:text-4xl md:text-5xl font-bold leading-snug relative min-h-[4.05em] max-h-[4.05em] overflow-hidden line-clamp-3 [word-break:break-word]">
+                            <span class="absolute -start-1 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-dev-primary/70 to-transparent opacity-70 hidden sm:block"></span>
+                            <span class="text-dev-primary">const</span>
+                            <span class="text-dev-muted dark:text-dev-muted mx-1">=</span>
+                            <span id="heroName" class="text-gradient-dev inline-block">Developer</span><span class="text-dev-cyan">;</span>
+                        </h1>
+                        <p class="hero-el hero-morph-lock text-lg md:text-xl font-extrabold text-slate-800 dark:text-dev-heading min-h-[2.75em] max-h-[2.75em] overflow-hidden line-clamp-2 leading-snug [word-break:break-word]">
+                            <span class="text-dev-muted font-code me-2">//</span><span id="heroTagline">Full Stack Developer & UI/UX Designer</span>
+                        </p>
+                        <p class="hero-el hero-morph-lock text-base md:text-lg text-slate-600 dark:text-dev-body max-w-xl leading-normal min-h-[7.5em] max-h-[7.5em] overflow-hidden line-clamp-5 [word-break:break-word]" id="heroDescription">
+                            Passionate developer creating exceptional digital experiences with modern technologies.
+                        </p>
+                        <div class="hero-el flex flex-wrap gap-3">
+                            <a href="#contact" class="hero-cta group inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-dev text-white font-bold glow-primary hover:scale-[1.02] transition-transform min-h-[3rem]">
+                                <span data-text-en="Get In Touch" data-text-ar="تواصل معي">Get In Touch</span>
+                                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform rtl:rotate-180 rtl:group-hover:-translate-x-1"></i>
+                            </a>
+                            <a href="#projects" class="hero-cta inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl border-2 border-dev-border bg-dev-card/50 dark:bg-dev-card/60 text-slate-800 dark:text-dev-heading font-bold hover:border-dev-primary/50 min-h-[3rem] transition-colors">
+                                <span data-text-en="View Projects" data-text-ar="عرض المشاريع">View Projects</span>
+                                <i class="fas fa-code text-dev-cyan"></i>
+                            </a>
+                        </div>
+                        <div class="hero-el flex flex-wrap gap-3 pt-2">
+                            <a href="#" class="social-orbit w-11 h-11 rounded-xl border border-slate-200 dark:border-dev-border flex items-center justify-center text-slate-600 dark:text-dev-body hover:text-dev-primary hover:border-dev-primary/40 transition-colors" title="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-orbit w-11 h-11 rounded-xl border border-slate-200 dark:border-dev-border flex items-center justify-center text-slate-600 dark:text-dev-body hover:text-dev-primary hover:border-dev-primary/40 transition-colors" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-orbit w-11 h-11 rounded-xl border border-slate-200 dark:border-dev-border flex items-center justify-center text-slate-600 dark:text-dev-body hover:text-dev-primary hover:border-dev-primary/40 transition-colors" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-orbit w-11 h-11 rounded-xl border border-slate-200 dark:border-dev-border flex items-center justify-center text-slate-600 dark:text-dev-body hover:text-dev-primary hover:border-dev-primary/40 transition-colors" title="CodePen"><i class="fab fa-codepen"></i></a>
+                            <a href="mailto:developer@example.com" class="social-orbit w-11 h-11 rounded-xl border border-slate-200 dark:border-dev-border flex items-center justify-center text-slate-600 dark:text-dev-body hover:text-dev-primary hover:border-dev-primary/40 transition-colors" title="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="hero-visual hero-el relative flex justify-center lg:justify-end lg:pt-1">
+                        <div class="relative w-full max-w-md lg:max-w-lg xl:max-w-xl aspect-square lg:aspect-auto lg:min-h-[320px] xl:min-h-[360px]">
+                            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-dev-primary/35 via-dev-cyan/25 to-dev-accent/15 blur-3xl scale-90 hero-glow pointer-events-none"></div>
+                            <div class="hero-card-frame relative rounded-3xl border border-slate-200/90 dark:border-dev-border/90 bg-white/35 dark:bg-dev-card/45 backdrop-blur-2xl shadow-[0_28px_90px_rgba(15,23,42,0.35)] dark:shadow-[0_32px_100px_rgba(0,0,0,0.55)] overflow-hidden min-h-[260px] lg:min-h-[320px] xl:min-h-[360px] ring-1 ring-white/20 dark:ring-white/5">
+                                <div class="hero-hud pointer-events-none absolute inset-0 z-20">
+                                    <div class="absolute top-3 start-3 w-9 h-9 border-s-2 border-t-2 border-dev-cyan/90 rounded-ss-lg"></div>
+                                    <div class="absolute top-3 end-3 w-9 h-9 border-e-2 border-t-2 border-dev-primary/90 rounded-se-lg"></div>
+                                    <div class="absolute bottom-3 start-3 w-9 h-9 border-s-2 border-b-2 border-dev-primary/80 rounded-es-lg"></div>
+                                    <div class="absolute bottom-3 end-3 w-9 h-9 border-e-2 border-b-2 border-dev-cyan/80 rounded-ee-lg"></div>
+                                    <div class="hero-scanlines absolute inset-0 opacity-[0.06] dark:opacity-[0.11]"></div>
+                                    <div class="absolute top-12 start-0 end-0 flex justify-center px-4">
+                                        <p id="heroSignalLabel" class="font-code text-[10px] md:text-[11px] text-dev-cyan/95 uppercase tracking-[0.42em] text-center truncate max-w-full">signal · full_stack.v2</p>
+                                    </div>
+                                </div>
+                                <div class="hero-3d-host relative w-full min-h-[260px] lg:min-h-[320px] xl:min-h-[360px]">
+                                    <canvas id="hero3d" class="block w-full h-full min-h-[260px] lg:min-h-[320px] xl:min-h-[360px] cursor-grab active:cursor-grabbing touch-none" aria-hidden="true"></canvas>
+                                    <div class="absolute bottom-3 start-0 end-0 z-30 flex justify-center gap-2 px-4 pointer-events-auto" id="heroModeDots" role="tablist" aria-label="Visual modes">
+                                        <button type="button" class="hero-dot is-active w-2.5 h-2.5 rounded-full bg-dev-border ring-2 ring-transparent transition-all hover:scale-125" data-hero-step="0" aria-selected="true" aria-label="Full stack"></button>
+                                        <button type="button" class="hero-dot w-2.5 h-2.5 rounded-full bg-dev-border/60 ring-2 ring-transparent transition-all hover:scale-125" data-hero-step="1" aria-selected="false" aria-label="Frontend"></button>
+                                        <button type="button" class="hero-dot w-2.5 h-2.5 rounded-full bg-dev-border/60 ring-2 ring-transparent transition-all hover:scale-125" data-hero-step="2" aria-selected="false" aria-label="Backend"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hero-badge absolute -start-2 top-[18%] md:start-0 floating-badge flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/95 dark:bg-dev-card/95 border border-slate-200 dark:border-dev-border shadow-xl max-w-[240px] backdrop-blur-md z-10" id="heroBadgeA">
+                                <i id="heroBadgeAIcon" class="fab fa-react text-3xl text-dev-cyan shrink-0"></i>
+                                <div class="text-start min-w-0">
+                                    <p id="heroBadgeATitle" class="font-bold text-sm text-slate-800 dark:text-dev-heading truncate">React</p>
+                                    <p id="heroBadgeASub" class="text-xs text-slate-500 dark:text-dev-muted leading-snug">Redux · Router · Hooks</p>
+                                </div>
+                            </div>
+                            <div class="hero-badge absolute -end-2 bottom-[20%] md:end-0 floating-badge flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/95 dark:bg-dev-card/95 border border-slate-200 dark:border-dev-border shadow-xl max-w-[240px] backdrop-blur-md z-10" id="heroBadgeB">
+                                <i id="heroBadgeBIcon" class="fab fa-node-js text-3xl text-dev-green shrink-0"></i>
+                                <div class="text-start min-w-0">
+                                    <p id="heroBadgeBTitle" class="font-bold text-sm text-slate-800 dark:text-dev-heading truncate">Node.js</p>
+                                    <p id="heroBadgeBSub" class="text-xs text-slate-500 dark:text-dev-muted leading-snug">Express · Socket.io</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-hint absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-slate-400 dark:text-dev-muted text-[10px] md:text-xs font-bold uppercase tracking-widest">
+                <div class="w-6 h-10 rounded-full border-2 border-current flex justify-center pt-2">
+                    <span class="w-1 h-2 rounded-full bg-dev-cyan animate-bounce"></span>
+                </div>
+                <span data-text-en="Scroll Down" data-text-ar="انتقل للأسفل">Scroll Down</span>
+            </div>
+        </section>
+
+        <!-- About — editorial bento -->
+        <section id="about" class="about-section relative py-20 md:py-28 border-t border-slate-200 dark:border-dev-border overflow-hidden bg-slate-50 dark:bg-dev-bg">
+            <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_100%_0%,rgba(192,132,252,0.11),transparent_60%)] dark:bg-[radial-gradient(ellipse_55%_45%_at_100%_0%,rgba(192,132,252,0.14),transparent_55%)]"></div>
+            <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_0%_100%,rgba(103,232,249,0.08),transparent_55%)]"></div>
+            <div class="pointer-events-none absolute -top-32 end-0 w-[min(100%,520px)] h-[420px] rounded-full bg-gradient-to-bl from-dev-primary/25 via-dev-secondary/10 to-transparent blur-[100px] opacity-70 dark:opacity-100"></div>
+            <div class="pointer-events-none absolute -bottom-40 start-0 w-[420px] h-[380px] rounded-full bg-gradient-to-tr from-dev-cyan/20 to-transparent blur-[90px] opacity-60"></div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <header class="sec-head mb-12 md:mb-16 lg:mb-20">
+                    <div class="flex flex-col sm:flex-row sm:flex-wrap sm:items-end gap-4 md:gap-6">
+                        <span class="text-6xl sm:text-7xl md:text-8xl font-black leading-none text-transparent bg-clip-text bg-gradient-to-br from-dev-primary/40 via-dev-secondary/35 to-dev-cyan/30 dark:from-dev-primary/50 dark:via-dev-cyan/25 dark:to-dev-secondary/20 select-none sec-num tracking-tighter">01</span>
+                        <div class="flex-1 min-w-0">
+                            <p class="about-eyebrow text-[11px] md:text-xs font-bold uppercase tracking-[0.35em] text-dev-cyan mb-2 md:mb-3" data-text-en="Profile snapshot" data-text-ar="لمحة شخصية">Profile snapshot</p>
+                            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black text-slate-900 dark:text-dev-heading flex flex-wrap items-baseline gap-2 md:gap-3 sec-title leading-[1.1]">
+                                <span class="text-dev-cyan font-code text-[0.65em] md:text-[0.55em] font-bold drop-shadow-[0_0_24px_rgba(103,232,249,0.35)]">&lt;</span>
+                                <span data-text-en="About Me" data-text-ar="عني">About Me</span>
+                                <span class="text-dev-cyan font-code text-[0.65em] md:text-[0.55em] font-bold drop-shadow-[0_0_24px_rgba(192,132,252,0.3)]">/&gt;</span>
+                            </h2>
+                        </div>
+                        <div class="hidden sm:block flex-1 min-w-[4rem] h-px bg-gradient-to-l from-transparent via-dev-primary/35 to-dev-border/80 dark:to-dev-border sec-line origin-left rtl:origin-right"></div>
+                    </div>
+                </header>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 md:gap-6 lg:gap-8 items-stretch">
+                    <div class="lg:col-span-7 flex flex-col gap-5 md:gap-6">
+                        <div class="about-lead-card group relative rounded-3xl border border-slate-200/90 dark:border-white/[0.08] bg-white/75 dark:bg-dev-card/35 backdrop-blur-2xl p-8 md:p-10 lg:p-11 shadow-[0_28px_80px_rgba(15,23,42,0.08)] dark:shadow-[0_32px_90px_rgba(0,0,0,0.35)] overflow-hidden ring-1 ring-black/[0.03] dark:ring-white/[0.06]">
+                            <div class="absolute -end-16 -top-16 w-56 h-56 rounded-full bg-gradient-dev opacity-[0.12] dark:opacity-[0.18] blur-3xl transition-opacity duration-700 group-hover:opacity-[0.2] pointer-events-none"></div>
+                            <div class="absolute start-0 top-0 bottom-0 w-1 rounded-s-3xl bg-gradient-to-b from-dev-primary via-dev-cyan to-dev-accent opacity-80"></div>
+                            <p class="about-text relative text-lg md:text-xl lg:text-2xl font-semibold text-slate-800 dark:text-dev-heading leading-[1.55] md:leading-relaxed" data-text-en="I'm a passionate Full Stack Developer with over 5 years of experience in building modern web applications and mobile solutions. I specialize in JavaScript technologies, React, Node.js, and creating beautiful user interfaces." data-text-ar="أنا مطور Full Stack شغوف مع أكثر من 5 سنوات من الخبرة في بناء تطبيقات الويب الحديثة والحلول الجوالة. أتخصص في تقنيات JavaScript، React، Node.js، وإنشاء واجهات مستخدم جميلة.">
+                                I'm a passionate Full Stack Developer with over 5 years of experience in building modern web applications and mobile solutions. I specialize in JavaScript technologies, React, Node.js, and creating beautiful user interfaces.
+                            </p>
+                            <div class="about-chip-row relative mt-8 flex flex-wrap gap-2 md:gap-3">
+                                <span class="about-chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs md:text-sm font-bold bg-slate-100/90 dark:bg-dev-deeper/80 border border-slate-200/80 dark:border-dev-border text-slate-700 dark:text-dev-body shadow-sm">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-dev-green shadow-[0_0_8px_#86efac]"></span> React
+                                </span>
+                                <span class="about-chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs md:text-sm font-bold bg-slate-100/90 dark:bg-dev-deeper/80 border border-slate-200/80 dark:border-dev-border text-slate-700 dark:text-dev-body shadow-sm">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-dev-cyan shadow-[0_0_8px_#67e8f9]"></span> Node.js
+                                </span>
+                                <span class="about-chip inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs md:text-sm font-bold bg-slate-100/90 dark:bg-dev-deeper/80 border border-slate-200/80 dark:border-dev-border text-slate-700 dark:text-dev-body shadow-sm">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-dev-primary shadow-[0_0_8px_#c084fc]"></span> TypeScript
+                                </span>
+                                <span class="about-chip inline-flex items-center px-3.5 py-2 rounded-xl text-xs md:text-sm font-bold border border-dashed border-dev-primary/40 text-dev-primary/90 dark:text-dev-cyan/90" data-text-en="Design × Engineering" data-text-ar="تصميم × هندسة">Design × Engineering</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 flex flex-col gap-5 md:gap-6">
+                        <div class="about-terminal-wrap relative rounded-3xl p-[1px] bg-gradient-to-br from-dev-primary/70 via-dev-secondary/50 to-dev-cyan/60 shadow-[0_24px_70px_rgba(192,132,252,0.15)] dark:shadow-[0_28px_80px_rgba(0,0,0,0.45)]">
+                            <div class="about-terminal-inner about-code rounded-[22px] bg-[#0c1222] dark:bg-[#060a12] border border-white/5 overflow-hidden">
+                                <div class="flex items-center justify-between px-4 py-3 border-b border-white/[0.06] bg-black/20">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-red-500/90"></span>
+                                        <span class="w-2.5 h-2.5 rounded-full bg-amber-400/90"></span>
+                                        <span class="w-2.5 h-2.5 rounded-full bg-dev-green/90"></span>
+                                    </div>
+                                    <span class="font-code text-[10px] text-dev-muted/80 uppercase tracking-widest">developer.ts</span>
+                                </div>
+                                <div class="about-terminal-body font-code text-[13px] md:text-sm p-5 md:p-6 leading-relaxed text-dev-body overflow-x-auto">
+                                    <div class="space-y-1 text-left rtl:text-right">
+                                        <p><span class="text-dev-secondary">const</span> <span class="text-dev-cyan">developer</span> <span class="text-dev-muted">=</span> <span class="text-dev-accent">{</span></p>
+                                        <p class="ps-4"><span class="text-dev-primary">name</span><span class="text-dev-muted">:</span> <span class="text-dev-green">'Developer'</span><span class="text-dev-muted">,</span></p>
+                                        <p class="ps-4"><span class="text-dev-primary">skills</span><span class="text-dev-muted">:</span> <span class="text-dev-accent">[</span><span class="text-dev-green">'React'</span><span class="text-dev-muted">,</span> <span class="text-dev-green">'Node.js'</span><span class="text-dev-muted">,</span> <span class="text-dev-green">'TypeScript'</span><span class="text-dev-accent">]</span><span class="text-dev-muted">,</span></p>
+                                        <p class="ps-4"><span class="text-dev-primary">passion</span><span class="text-dev-muted">:</span> <span class="text-dev-green">'Coding'</span></p>
+                                        <p><span class="text-dev-accent">}</span><span class="text-dev-muted">;</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-3 md:gap-4">
+                            <div class="stat-card about-stat-tile group relative text-center p-4 md:p-5 rounded-2xl border border-slate-200/90 dark:border-white/[0.07] bg-gradient-to-b from-white to-slate-50/90 dark:from-dev-card/80 dark:to-dev-deeper/90 shadow-md hover:shadow-lg hover:border-dev-primary/25 dark:hover:border-dev-primary/30 transition-all duration-300">
+                                <div class="stat-num text-2xl md:text-3xl lg:text-4xl font-black text-gradient-dev tabular-nums" data-count="50">0</div>
+                                <div class="text-[10px] md:text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-dev-muted mt-2 leading-tight" data-text-en="Projects" data-text-ar="مشروع">Projects</div>
+                            </div>
+                            <div class="stat-card about-stat-tile group relative text-center p-4 md:p-5 rounded-2xl border border-slate-200/90 dark:border-white/[0.07] bg-gradient-to-b from-white to-slate-50/90 dark:from-dev-card/80 dark:to-dev-deeper/90 shadow-md hover:shadow-lg hover:border-dev-cyan/25 dark:hover:border-dev-cyan/30 transition-all duration-300">
+                                <div class="stat-num text-2xl md:text-3xl lg:text-4xl font-black text-gradient-dev tabular-nums" data-count="5">0</div>
+                                <div class="text-[10px] md:text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-dev-muted mt-2 leading-tight" data-text-en="Years Experience" data-text-ar="سنوات خبرة">Years Experience</div>
+                            </div>
+                            <div class="stat-card about-stat-tile group relative text-center p-4 md:p-5 rounded-2xl border border-slate-200/90 dark:border-white/[0.07] bg-gradient-to-b from-white to-slate-50/90 dark:from-dev-card/80 dark:to-dev-deeper/90 shadow-md hover:shadow-lg hover:border-dev-accent/30 transition-all duration-300">
+                                <div class="stat-num text-2xl md:text-3xl lg:text-4xl font-black text-gradient-dev tabular-nums" data-static="1">∞</div>
+                                <div class="text-[10px] md:text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-dev-muted mt-2 leading-tight" data-text-en="Happy Clients" data-text-ar="عميل سعيد">Happy Clients</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills — capability matrix -->
+        <section id="skills" class="skills-section relative py-20 md:py-28 border-t border-slate-200 dark:border-dev-border overflow-hidden bg-slate-50 dark:bg-dev-bg">
+            <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_42%_at_0%_0%,rgba(103,232,249,0.12),transparent_58%)] dark:bg-[radial-gradient(ellipse_50%_42%_at_0%_0%,rgba(103,232,249,0.14),transparent_55%)]"></div>
+            <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_45%_40%_at_100%_100%,rgba(192,132,252,0.1),transparent_55%)] dark:bg-[radial-gradient(ellipse_45%_40%_at_100%_100%,rgba(192,132,252,0.12),transparent_52%)]"></div>
+            <div class="pointer-events-none absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(100%,720px)] h-[480px] rounded-full bg-gradient-to-r from-dev-cyan/10 via-dev-primary/8 to-dev-accent/6 blur-[100px] opacity-80"></div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <header class="sec-head mb-12 md:mb-16 lg:mb-20">
+                    <div class="flex flex-col sm:flex-row sm:flex-wrap sm:items-end gap-4 md:gap-6">
+                        <span class="text-6xl sm:text-7xl md:text-8xl font-black leading-none text-transparent bg-clip-text bg-gradient-to-br from-dev-cyan/45 via-dev-primary/40 to-dev-secondary/35 dark:from-dev-cyan/50 dark:via-dev-primary/45 dark:to-dev-secondary/30 select-none sec-num tracking-tighter">02</span>
+                        <div class="flex-1 min-w-0">
+                            <p class="skills-eyebrow text-[11px] md:text-xs font-bold uppercase tracking-[0.35em] text-dev-cyan mb-2 md:mb-3" data-text-en="Capability matrix" data-text-ar="مصفوفة القدرات">Capability matrix</p>
+                            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black text-slate-900 dark:text-dev-heading flex flex-wrap items-baseline gap-2 md:gap-3 sec-title leading-[1.1]">
+                                <span class="text-dev-cyan font-code text-[0.65em] md:text-[0.55em] font-bold drop-shadow-[0_0_22px_rgba(103,232,249,0.35)]">&lt;</span>
+                                <span data-text-en="Skills" data-text-ar="المهارات">Skills</span>
+                                <span class="text-dev-cyan font-code text-[0.65em] md:text-[0.55em] font-bold drop-shadow-[0_0_22px_rgba(192,132,252,0.28)]">/&gt;</span>
+                            </h2>
+                        </div>
+                        <div class="hidden sm:block flex-1 min-w-[4rem] h-px bg-gradient-to-l from-transparent via-dev-cyan/35 to-dev-border/80 dark:to-dev-border sec-line origin-left rtl:origin-right"></div>
+                    </div>
+                </header>
+
+                <div class="grid md:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
+                    <!-- Frontend -->
+                    <div class="skill-col group relative rounded-3xl p-[1px] bg-gradient-to-br from-dev-primary/65 via-dev-secondary/45 to-dev-cyan/50 shadow-[0_24px_70px_rgba(192,132,252,0.12)] dark:shadow-[0_28px_80px_rgba(0,0,0,0.4)] transition-shadow duration-500 hover:shadow-[0_32px_90px_rgba(192,132,252,0.18)] dark:hover:shadow-[0_32px_90px_rgba(0,0,0,0.5)]">
+                        <div class="rounded-[22px] h-full bg-white/85 dark:bg-dev-card/45 backdrop-blur-2xl border border-white/50 dark:border-white/[0.07] p-6 md:p-8 ring-1 ring-black/[0.04] dark:ring-white/[0.05]">
+                            <div class="flex items-start gap-4 mb-8 pb-6 border-b border-slate-200/80 dark:border-white/[0.08]">
+                                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-dev-primary/25 to-dev-cyan/20 text-2xl text-dev-primary border border-dev-primary/30 shadow-inner">
+                                    <i class="fas fa-layer-group" aria-hidden="true"></i>
+                                </div>
+                                <div class="min-w-0 pt-0.5">
+                                    <h3 class="font-black text-xl md:text-2xl text-slate-900 dark:text-dev-heading leading-tight" data-text-en="Frontend" data-text-ar="الواجهة الأمامية">Frontend</h3>
+                                    <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.2em] text-dev-muted" data-text-en="UI & experience" data-text-ar="واجهات وتجربة">UI & experience</p>
+                                </div>
+                            </div>
+                            <div class="space-y-5 md:space-y-6">
+                                <div class="skill-item space-y-2.5" data-percent="95">
+                                    <div class="flex justify-between items-baseline gap-3">
+                                        <span class="text-sm font-bold text-slate-800 dark:text-dev-heading">React</span>
+                                        <span class="skill-pct font-code text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-dev-primary to-dev-cyan tabular-nums">0%</span>
+                                    </div>
+                                    <div class="skill-track relative h-3 overflow-hidden rounded-full bg-slate-200/95 dark:bg-dev-deeper/90 ring-1 ring-inset ring-black/[0.06] dark:ring-white/[0.08]">
+                                        <div class="skill-bar absolute inset-y-0 start-0 h-full w-0 rounded-full bg-gradient-dev shadow-[0_0_18px_rgba(192,132,252,0.5)]"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item space-y-2.5" data-percent="85">
+                                    <div class="flex justify-between items-baseline gap-3">
+                                        <span class="text-sm font-bold text-slate-800 dark:text-dev-heading">Vue.js</span>
+                                        <span class="skill-pct font-code text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-dev-primary to-dev-cyan tabular-nums">0%</span>
+                                    </div>
+                                    <div class="skill-track relative h-3 overflow-hidden rounded-full bg-slate-200/95 dark:bg-dev-deeper/90 ring-1 ring-inset ring-black/[0.06] dark:ring-white/[0.08]">
+                                        <div class="skill-bar absolute inset-y-0 start-0 h-full w-0 rounded-full bg-gradient-dev shadow-[0_0_18px_rgba(192,132,252,0.5)]"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item space-y-2.5" data-percent="90">
+                                    <div class="flex justify-between items-baseline gap-3">
+                                        <span class="text-sm font-bold text-slate-800 dark:text-dev-heading">TypeScript</span>
+                                        <span class="skill-pct font-code text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-dev-primary to-dev-cyan tabular-nums">0%</span>
+                                    </div>
+                                    <div class="skill-track relative h-3 overflow-hidden rounded-full bg-slate-200/95 dark:bg-dev-deeper/90 ring-1 ring-inset ring-black/[0.06] dark:ring-white/[0.08]">
+                                        <div class="skill-bar absolute inset-y-0 start-0 h-full w-0 rounded-full bg-gradient-dev shadow-[0_0_18px_rgba(192,132,252,0.5)]"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item space-y-2.5" data-percent="88">
+                                    <div class="flex justify-between items-baseline gap-3">
+                                        <span class="text-sm font-bold text-slate-800 dark:text-dev-heading">Next.js</span>
+                                        <span class="skill-pct font-code text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-dev-primary to-dev-cyan tabular-nums">0%</span>
+                                    </div>
+                                    <div class="skill-track relative h-3 overflow-hidden rounded-full bg-slate-200/95 dark:bg-dev-deeper/90 ring-1 ring-inset ring-black/[0.06] dark:ring-white/[0.08]">
+                                        <div class="skill-bar absolute inset-y-0 start-0 h-full w-0 rounded-full bg-gradient-dev shadow-[0_0_18px_rgba(192,132,252,0.5)]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="skill-col group relative rounded-3xl p-[1px] bg-gradient-to-br from-dev-cyan/55 via-dev-secondary/50 to-dev-accent/35 shadow-[0_24px_70px_rgba(103,232,249,0.1)] dark:shadow-[0_28px_80px_rgba(0,0,0,0.4)] transition-shadow duration-500 hover:shadow-[0_32px_90px_rgba(103,232,249,0.15)] dark:hover:shadow-[0_32px_90px_rgba(0,0,0,0.5)]">
+                        <div class="rounded-[22px] h-full bg-white/85 dark:bg-dev-card/45 backdrop-blur-2xl border border-white/50 dark:border-white/[0.07] p-6 md:p-8 ring-1 ring-black/[0.04] dark:ring-white/[0.05]">
+                            <div class="flex items-start gap-4 mb-8 pb-6 border-b border-slate-200/80 dark:border-white/[0.08]">
+                                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-dev-cyan/25 to-dev-secondary/25 text-2xl text-dev-cyan border border-dev-cyan/35 shadow-inner">
+                                    <i class="fas fa-server" aria-hidden="true"></i>
+                                </div>
+                                <div class="min-w-0 pt-0.5">
+                                    <h3 class="font-black text-xl md:text-2xl text-slate-900 dark:text-dev-heading leading-tight" data-text-en="Backend" data-text-ar="الخلفية">Backend</h3>
+                                    <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.2em] text-dev-muted" data-text-en="Systems & data" data-text-ar="أنظمة وبيانات">Systems & data</p>
+                                </div>
+                            </div>
+                            <div class="space-y-5 md:space-y-6">
+                                <div class="skill-item space-y-2.5" data-percent="92">
+                                    <div class="flex justify-between items-baseline gap-3">
+                                        <span class="text-sm font-bold text-slate-800 dark:text-dev-heading">Node.js</span>
+                                        <span class="skill-pct font-code text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-dev-cyan to-dev-accent tabular-nums">0%</span>
+                                    </div>
+                                    <div class="skill-track relative h-3 overflow-hidden rounded-full bg-slate-200/95 dark:bg-dev-deeper/90 ring-1 ring-inset ring-black/[0.06] dark:ring-white/[0.08]">
+                                        <div class="skill-bar absolute inset-y-0 start-0 h-full w-0 rounded-full bg-gradient-dev-2 shadow-[0_0_18px_rgba(103,232,249,0.45)]"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item space-y-2.5" data-percent="90">
+                                    <div class="flex justify-between items-baseline gap-3">
+                                        <span class="text-sm font-bold text-slate-800 dark:text-dev-heading">Express</span>
+                                        <span class="skill-pct font-code text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-dev-cyan to-dev-accent tabular-nums">0%</span>
+                                    </div>
+                                    <div class="skill-track relative h-3 overflow-hidden rounded-full bg-slate-200/95 dark:bg-dev-deeper/90 ring-1 ring-inset ring-black/[0.06] dark:ring-white/[0.08]">
+                                        <div class="skill-bar absolute inset-y-0 start-0 h-full w-0 rounded-full bg-gradient-dev-2 shadow-[0_0_18px_rgba(103,232,249,0.45)]"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item space-y-2.5" data-percent="85">
+                                    <div class="flex justify-between items-baseline gap-3">
+                                        <span class="text-sm font-bold text-slate-800 dark:text-dev-heading">MongoDB</span>
+                                        <span class="skill-pct font-code text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-dev-cyan to-dev-accent tabular-nums">0%</span>
+                                    </div>
+                                    <div class="skill-track relative h-3 overflow-hidden rounded-full bg-slate-200/95 dark:bg-dev-deeper/90 ring-1 ring-inset ring-black/[0.06] dark:ring-white/[0.08]">
+                                        <div class="skill-bar absolute inset-y-0 start-0 h-full w-0 rounded-full bg-gradient-dev-2 shadow-[0_0_18px_rgba(103,232,249,0.45)]"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item space-y-2.5" data-percent="80">
+                                    <div class="flex justify-between items-baseline gap-3">
+                                        <span class="text-sm font-bold text-slate-800 dark:text-dev-heading">PostgreSQL</span>
+                                        <span class="skill-pct font-code text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-dev-cyan to-dev-accent tabular-nums">0%</span>
+                                    </div>
+                                    <div class="skill-track relative h-3 overflow-hidden rounded-full bg-slate-200/95 dark:bg-dev-deeper/90 ring-1 ring-inset ring-black/[0.06] dark:ring-white/[0.08]">
+                                        <div class="skill-bar absolute inset-y-0 start-0 h-full w-0 rounded-full bg-gradient-dev-2 shadow-[0_0_18px_rgba(103,232,249,0.45)]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="skill-col group relative rounded-3xl p-[1px] bg-gradient-to-br from-dev-green/45 via-dev-cyan/45 to-dev-primary/45 shadow-[0_24px_70px_rgba(134,239,172,0.1)] dark:shadow-[0_28px_80px_rgba(0,0,0,0.4)] transition-shadow duration-500 hover:shadow-[0_32px_90px_rgba(134,239,172,0.14)] dark:hover:shadow-[0_32px_90px_rgba(0,0,0,0.5)]">
+                        <div class="rounded-[22px] h-full bg-white/85 dark:bg-dev-card/45 backdrop-blur-2xl border border-white/50 dark:border-white/[0.07] p-6 md:p-8 ring-1 ring-black/[0.04] dark:ring-white/[0.05]">
+                            <div class="flex items-start gap-4 mb-8 pb-6 border-b border-slate-200/80 dark:border-white/[0.08]">
+                                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-dev-green/25 to-dev-cyan/20 text-2xl text-dev-green border border-dev-green/35 shadow-inner">
+                                    <i class="fas fa-screwdriver-wrench" aria-hidden="true"></i>
+                                </div>
+                                <div class="min-w-0 pt-0.5">
+                                    <h3 class="font-black text-xl md:text-2xl text-slate-900 dark:text-dev-heading leading-tight" data-text-en="Tools & Others" data-text-ar="الأدوات وغيرها">Tools & Others</h3>
+                                    <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.2em] text-dev-muted" data-text-en="Workflow & delivery" data-text-ar="سير عمل وتسليم">Workflow & delivery</p>
+                                </div>
+                            </div>
+                            <div class="space-y-5 md:space-y-6">
+                                <div class="skill-item space-y-2.5" data-percent="95">
+                                    <div class="flex justify-between items-baseline gap-3">
+                                        <span class="text-sm font-bold text-slate-800 dark:text-dev-heading">Git</span>
+                                        <span class="skill-pct font-code text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-dev-green to-dev-cyan tabular-nums">0%</span>
+                                    </div>
+                                    <div class="skill-track relative h-3 overflow-hidden rounded-full bg-slate-200/95 dark:bg-dev-deeper/90 ring-1 ring-inset ring-black/[0.06] dark:ring-white/[0.08]">
+                                        <div class="skill-bar absolute inset-y-0 start-0 h-full w-0 rounded-full bg-gradient-to-r from-dev-green via-dev-cyan to-dev-primary shadow-[0_0_18px_rgba(134,239,172,0.45)]"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item space-y-2.5" data-percent="75">
+                                    <div class="flex justify-between items-baseline gap-3">
+                                        <span class="text-sm font-bold text-slate-800 dark:text-dev-heading">Docker</span>
+                                        <span class="skill-pct font-code text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-dev-green to-dev-cyan tabular-nums">0%</span>
+                                    </div>
+                                    <div class="skill-track relative h-3 overflow-hidden rounded-full bg-slate-200/95 dark:bg-dev-deeper/90 ring-1 ring-inset ring-black/[0.06] dark:ring-white/[0.08]">
+                                        <div class="skill-bar absolute inset-y-0 start-0 h-full w-0 rounded-full bg-gradient-to-r from-dev-green via-dev-cyan to-dev-primary shadow-[0_0_18px_rgba(134,239,172,0.45)]"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item space-y-2.5" data-percent="70">
+                                    <div class="flex justify-between items-baseline gap-3">
+                                        <span class="text-sm font-bold text-slate-800 dark:text-dev-heading">AWS</span>
+                                        <span class="skill-pct font-code text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-dev-green to-dev-cyan tabular-nums">0%</span>
+                                    </div>
+                                    <div class="skill-track relative h-3 overflow-hidden rounded-full bg-slate-200/95 dark:bg-dev-deeper/90 ring-1 ring-inset ring-black/[0.06] dark:ring-white/[0.08]">
+                                        <div class="skill-bar absolute inset-y-0 start-0 h-full w-0 rounded-full bg-gradient-to-r from-dev-green via-dev-cyan to-dev-primary shadow-[0_0_18px_rgba(134,239,172,0.45)]"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item space-y-2.5" data-percent="88">
+                                    <div class="flex justify-between items-baseline gap-3">
+                                        <span class="text-sm font-bold text-slate-800 dark:text-dev-heading">Figma</span>
+                                        <span class="skill-pct font-code text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-dev-green to-dev-cyan tabular-nums">0%</span>
+                                    </div>
+                                    <div class="skill-track relative h-3 overflow-hidden rounded-full bg-slate-200/95 dark:bg-dev-deeper/90 ring-1 ring-inset ring-black/[0.06] dark:ring-white/[0.08]">
+                                        <div class="skill-bar absolute inset-y-0 start-0 h-full w-0 rounded-full bg-gradient-to-r from-dev-green via-dev-cyan to-dev-primary shadow-[0_0_18px_rgba(134,239,172,0.45)]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="section-block py-20 md:py-28 border-t border-slate-200 dark:border-dev-border bg-slate-50 dark:bg-dev-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <header class="sec-head flex flex-wrap items-end gap-4 mb-14 md:mb-20">
+                    <span class="text-5xl md:text-6xl font-black text-dev-primary/30 select-none sec-num">03</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-dev-heading flex flex-wrap items-center gap-2 sec-title">
+                        <span class="text-dev-cyan font-code">&lt;</span>
+                        <span data-text-en="Experience" data-text-ar="الخبرة">Experience</span>
+                        <span class="text-dev-cyan font-code">/&gt;</span>
+                    </h2>
+                    <div class="hidden sm:block flex-1 h-px bg-gradient-to-l from-transparent to-dev-border sec-line"></div>
+                </header>
+                <div class="relative space-y-10 max-w-3xl timeline-wrap">
+                    <div class="absolute top-0 bottom-0 w-px bg-gradient-to-b from-dev-primary via-dev-cyan to-transparent start-3 md:start-4 opacity-50"></div>
+                    <article class="timeline-item relative ps-12 md:ps-14">
+                        <span class="absolute start-1.5 md:start-2.5 top-2 w-3 h-3 rounded-full bg-dev-deeper border-2 border-dev-primary shadow-[0_0_12px_rgba(192,132,252,0.6)]"></span>
+                        <div class="p-6 rounded-2xl border border-slate-200 dark:border-dev-border bg-white dark:bg-dev-card shadow-lg">
+                            <div class="flex flex-wrap items-center gap-2 mb-3">
+                                <span class="text-sm font-bold text-dev-cyan">2022 - Present</span>
+                                <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-dev-primary/20 text-dev-primary" data-text-en="Current" data-text-ar="حالياً">Current</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold mb-2" data-text-en="Senior Full Stack Developer" data-text-ar="مطور Full Stack أول">Senior Full Stack Developer</h3>
+                            <p class="text-sm text-dev-muted mb-3 flex items-center gap-2"><i class="fas fa-building text-dev-secondary"></i> Tech Company Inc.</p>
+                            <p class="text-slate-600 dark:text-dev-body leading-relaxed mb-4" data-text-en="Leading a team of developers in building complex web applications using React and Node.js. Developing advanced user interfaces and optimizing performance. Implementing microservices architecture and CI/CD pipelines." data-text-ar="قيادة فريق من المطورين في بناء تطبيقات ويب معقدة باستخدام React و Node.js. تطوير واجهات مستخدم متقدمة وتحسين الأداء. تنفيذ معمارية microservices وخطوط CI/CD.">
+                                Leading a team of developers in building complex web applications using React and Node.js.
+                            </p>
+                            <ul class="space-y-2 text-sm text-slate-600 dark:text-dev-body mb-4">
+                                <li class="flex items-start gap-2"><i class="fas fa-check-circle text-dev-green mt-0.5"></i><span data-text-en="Led team of 5 developers" data-text-ar="قيادة فريق من 5 مطورين">Led team of 5 developers</span></li>
+                                <li class="flex items-start gap-2"><i class="fas fa-check-circle text-dev-green mt-0.5"></i><span data-text-en="Improved performance by 40%" data-text-ar="تحسين الأداء بنسبة 40%">Improved performance by 40%</span></li>
+                                <li class="flex items-start gap-2"><i class="fas fa-check-circle text-dev-green mt-0.5"></i><span data-text-en="Deployed 20+ production apps" data-text-ar="نشر أكثر من 20 تطبيق إنتاجي">Deployed 20+ production apps</span></li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tag-pill text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-dev-hover border border-slate-200 dark:border-dev-border">React</span>
+                                <span class="tag-pill text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-dev-hover border border-slate-200 dark:border-dev-border">Node.js</span>
+                                <span class="tag-pill text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-dev-hover border border-slate-200 dark:border-dev-border">TypeScript</span>
+                                <span class="tag-pill text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-dev-hover border border-slate-200 dark:border-dev-border">MongoDB</span>
+                                <span class="tag-pill text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-dev-hover border border-slate-200 dark:border-dev-border">Docker</span>
+                                <span class="tag-pill text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-dev-hover border border-slate-200 dark:border-dev-border">AWS</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="timeline-item relative ps-12 md:ps-14">
+                        <span class="absolute start-1.5 md:start-2.5 top-2 w-3 h-3 rounded-full bg-dev-deeper border-2 border-dev-cyan"></span>
+                        <div class="p-6 rounded-2xl border border-slate-200 dark:border-dev-border bg-white dark:bg-dev-card shadow-lg">
+                            <span class="text-sm font-bold text-dev-cyan">2020 - 2022</span>
+                            <h3 class="text-xl font-extrabold mt-3 mb-2" data-text-en="Frontend Developer" data-text-ar="مطور واجهة أمامية">Frontend Developer</h3>
+                            <p class="text-sm text-dev-muted mb-3 flex items-center gap-2"><i class="fas fa-building text-dev-secondary"></i> Digital Solutions</p>
+                            <p class="text-slate-600 dark:text-dev-body leading-relaxed mb-4" data-text-en="Developed interactive user interfaces using React and Vue.js. Worked on improving user experience and performance optimization. Collaborated with designers to implement pixel-perfect designs." data-text-ar="تطوير واجهات مستخدم تفاعلية باستخدام React و Vue.js. العمل على تحسين تجربة المستخدم وتحسين الأداء. التعاون مع المصممين لتنفيذ تصاميم دقيقة.">
+                                Developed interactive user interfaces using React and Vue.js.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tag-pill text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-dev-hover border border-slate-200 dark:border-dev-border">React</span>
+                                <span class="tag-pill text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-dev-hover border border-slate-200 dark:border-dev-border">Vue.js</span>
+                                <span class="tag-pill text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-dev-hover border border-slate-200 dark:border-dev-border">JavaScript</span>
+                                <span class="tag-pill text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-dev-hover border border-slate-200 dark:border-dev-border">SASS</span>
+                                <span class="tag-pill text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-dev-hover border border-slate-200 dark:border-dev-border">Webpack</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="timeline-item relative ps-12 md:ps-14">
+                        <span class="absolute start-1.5 md:start-2.5 top-2 w-3 h-3 rounded-full bg-dev-deeper border-2 border-dev-accent"></span>
+                        <div class="p-6 rounded-2xl border border-slate-200 dark:border-dev-border bg-white dark:bg-dev-card shadow-lg">
+                            <span class="text-sm font-bold text-dev-cyan">2018 - 2020</span>
+                            <h3 class="text-xl font-extrabold mt-3 mb-2" data-text-en="Junior Developer" data-text-ar="مطور مبتدئ">Junior Developer</h3>
+                            <p class="text-sm text-dev-muted mb-3 flex items-center gap-2"><i class="fas fa-building text-dev-secondary"></i> Creative Studio</p>
+                            <p class="text-slate-600 dark:text-dev-body leading-relaxed mb-4" data-text-en="Developed websites using HTML, CSS, and JavaScript. Learned best practices in web development. Worked on various client projects and gained experience in modern web technologies." data-text-ar="تطوير مواقع ويب باستخدام HTML و CSS و JavaScript. تعلم أفضل الممارسات في تطوير الويب. العمل على مشاريع عملاء متنوعة واكتساب خبرة في تقنيات الويب الحديثة.">
+                                Developed websites using HTML, CSS, and JavaScript.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tag-pill text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-dev-hover border border-slate-200 dark:border-dev-border">HTML</span>
+                                <span class="tag-pill text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-dev-hover border border-slate-200 dark:border-dev-border">CSS</span>
+                                <span class="tag-pill text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-dev-hover border border-slate-200 dark:border-dev-border">JavaScript</span>
+                                <span class="tag-pill text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-dev-hover border border-slate-200 dark:border-dev-border">jQuery</span>
+                                <span class="tag-pill text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-dev-hover border border-slate-200 dark:border-dev-border">Bootstrap</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="section-block py-20 md:py-28 border-t border-slate-200 dark:border-dev-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <header class="sec-head flex flex-wrap items-end gap-4 mb-14 md:mb-20">
+                    <span class="text-5xl md:text-6xl font-black text-dev-primary/30 select-none sec-num">04</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-dev-heading flex flex-wrap items-center gap-2 sec-title">
+                        <span class="text-dev-cyan font-code">&lt;</span>
+                        <span data-text-en="Projects" data-text-ar="المشاريع">Projects</span>
+                        <span class="text-dev-cyan font-code">/&gt;</span>
+                    </h2>
+                    <div class="hidden sm:block flex-1 h-px bg-gradient-to-l from-transparent to-dev-border sec-line"></div>
+                </header>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <article class="project-card group rounded-2xl border border-slate-200 dark:border-dev-border bg-slate-50 dark:bg-dev-card/50 overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+                        <div class="project-media relative aspect-[16/10] bg-gradient-to-br from-dev-primary/20 to-dev-cyan/20 flex items-center justify-center overflow-hidden">
+                            <div class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 project-overlay">
+                                <a href="#" class="w-12 h-12 rounded-xl bg-white/10 backdrop-blur flex items-center justify-center text-white hover:bg-dev-primary transition-colors"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="w-12 h-12 rounded-xl bg-white/10 backdrop-blur flex items-center justify-center text-white hover:bg-dev-primary transition-colors"><i class="fab fa-github"></i></a>
+                            </div>
+                            <i class="fas fa-shopping-cart text-5xl text-dev-primary/80"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-extrabold mb-2" data-text-en="E-Commerce Platform" data-text-ar="منصة التجارة الإلكترونية">E-Commerce Platform</h3>
+                            <p class="text-sm text-slate-600 dark:text-dev-body leading-relaxed mb-4" data-text-en="A complete e-commerce platform with payment integration and advanced inventory management." data-text-ar="منصة تجارة إلكترونية كاملة مع تكامل الدفع وإدارة المخزون المتقدمة.">
+                                A complete e-commerce platform with payment integration and advanced inventory management.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs px-2 py-1 rounded-md bg-white dark:bg-dev-hover border border-slate-200 dark:border-dev-border">React</span>
+                                <span class="text-xs px-2 py-1 rounded-md bg-white dark:bg-dev-hover border border-slate-200 dark:border-dev-border">Node.js</span>
+                                <span class="text-xs px-2 py-1 rounded-md bg-white dark:bg-dev-hover border border-slate-200 dark:border-dev-border">MongoDB</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card group rounded-2xl border border-slate-200 dark:border-dev-border bg-slate-50 dark:bg-dev-card/50 overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+                        <div class="project-media relative aspect-[16/10] bg-gradient-to-br from-dev-cyan/20 to-dev-accent/20 flex items-center justify-center overflow-hidden">
+                            <div class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 project-overlay">
+                                <a href="#" class="w-12 h-12 rounded-xl bg-white/10 backdrop-blur flex items-center justify-center text-white hover:bg-dev-primary transition-colors"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="w-12 h-12 rounded-xl bg-white/10 backdrop-blur flex items-center justify-center text-white hover:bg-dev-primary transition-colors"><i class="fab fa-github"></i></a>
+                            </div>
+                            <i class="fas fa-tasks text-5xl text-dev-cyan/80"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-extrabold mb-2" data-text-en="Task Management App" data-text-ar="تطبيق إدارة المهام">Task Management App</h3>
+                            <p class="text-sm text-slate-600 dark:text-dev-body leading-relaxed mb-4" data-text-en="A web application for task management with real-time synchronization and modern design." data-text-ar="تطبيق ويب لإدارة المهام مع مزامنة فورية وتصميم عصري.">
+                                A web application for task management with real-time synchronization and modern design.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs px-2 py-1 rounded-md bg-white dark:bg-dev-hover border border-slate-200 dark:border-dev-border">React</span>
+                                <span class="text-xs px-2 py-1 rounded-md bg-white dark:bg-dev-hover border border-slate-200 dark:border-dev-border">Firebase</span>
+                                <span class="text-xs px-2 py-1 rounded-md bg-white dark:bg-dev-hover border border-slate-200 dark:border-dev-border">TypeScript</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card group rounded-2xl border border-slate-200 dark:border-dev-border bg-slate-50 dark:bg-dev-card/50 overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+                        <div class="project-media relative aspect-[16/10] bg-gradient-to-br from-dev-green/20 to-dev-secondary/20 flex items-center justify-center overflow-hidden">
+                            <div class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 project-overlay">
+                                <a href="#" class="w-12 h-12 rounded-xl bg-white/10 backdrop-blur flex items-center justify-center text-white hover:bg-dev-primary transition-colors"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="w-12 h-12 rounded-xl bg-white/10 backdrop-blur flex items-center justify-center text-white hover:bg-dev-primary transition-colors"><i class="fab fa-github"></i></a>
+                            </div>
+                            <i class="fas fa-blog text-5xl text-dev-green/80"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-extrabold mb-2" data-text-en="Blog Platform" data-text-ar="منصة المدونة">Blog Platform</h3>
+                            <p class="text-sm text-slate-600 dark:text-dev-body leading-relaxed mb-4" data-text-en="A modern blog platform with CMS features and beautiful UI design." data-text-ar="منصة مدونة حديثة مع ميزات CMS وتصميم واجهة مستخدم جميل.">
+                                A modern blog platform with CMS features and beautiful UI design.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs px-2 py-1 rounded-md bg-white dark:bg-dev-hover border border-slate-200 dark:border-dev-border">Next.js</span>
+                                <span class="text-xs px-2 py-1 rounded-md bg-white dark:bg-dev-hover border border-slate-200 dark:border-dev-border">Prisma</span>
+                                <span class="text-xs px-2 py-1 rounded-md bg-white dark:bg-dev-hover border border-slate-200 dark:border-dev-border">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section-block py-20 md:py-28 border-t border-slate-200 dark:border-dev-border bg-slate-50 dark:bg-dev-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <header class="sec-head flex flex-wrap items-end gap-4 mb-14 md:mb-20">
+                    <span class="text-5xl md:text-6xl font-black text-dev-primary/30 select-none sec-num">05</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-dev-heading flex flex-wrap items-center gap-2 sec-title">
+                        <span class="text-dev-cyan font-code">&lt;</span>
+                        <span data-text-en="Contact" data-text-ar="التواصل">Contact</span>
+                        <span class="text-dev-cyan font-code">/&gt;</span>
+                    </h2>
+                    <div class="hidden sm:block flex-1 h-px bg-gradient-to-l from-transparent to-dev-border sec-line"></div>
+                </header>
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <div class="flex gap-4 p-4 rounded-2xl border border-slate-200 dark:border-dev-border bg-white dark:bg-dev-card contact-card">
+                            <div class="w-12 h-12 rounded-xl bg-dev-primary/15 flex items-center justify-center text-dev-primary shrink-0"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-500 dark:text-dev-muted" data-text-en="Email" data-text-ar="البريد الإلكتروني">Email</h4>
+                                <a href="mailto:developer@example.com" class="font-semibold text-dev-cyan hover:underline">developer@example.com</a>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 p-4 rounded-2xl border border-slate-200 dark:border-dev-border bg-white dark:bg-dev-card contact-card">
+                            <div class="w-12 h-12 rounded-xl bg-dev-primary/15 flex items-center justify-center text-dev-primary shrink-0"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-500 dark:text-dev-muted" data-text-en="Phone" data-text-ar="الهاتف">Phone</h4>
+                                <a href="tel:+966501234567" class="font-semibold">+966 50 123 4567</a>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 p-4 rounded-2xl border border-slate-200 dark:border-dev-border bg-white dark:bg-dev-card contact-card">
+                            <div class="w-12 h-12 rounded-xl bg-dev-primary/15 flex items-center justify-center text-dev-primary shrink-0"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-500 dark:text-dev-muted" data-text-en="Location" data-text-ar="الموقع">Location</h4>
+                                <span data-text-en="Riyadh, Saudi Arabia" data-text-ar="الرياض، المملكة العربية السعودية">Riyadh, Saudi Arabia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="contactForm" class="space-y-4 p-6 rounded-2xl border border-slate-200 dark:border-dev-border bg-white dark:bg-dev-card shadow-xl">
+                        <input type="text" class="form-field w-full px-4 py-3.5 rounded-xl border border-slate-200 dark:border-dev-border bg-slate-50 dark:bg-dev-deeper text-slate-900 dark:text-dev-heading placeholder:text-slate-400 focus:ring-2 focus:ring-dev-primary/40 outline-none transition-shadow" placeholder="Name" data-placeholder-en="Name" data-placeholder-ar="الاسم" required>
+                        <input type="email" class="form-field w-full px-4 py-3.5 rounded-xl border border-slate-200 dark:border-dev-border bg-slate-50 dark:bg-dev-deeper text-slate-900 dark:text-dev-heading placeholder:text-slate-400 focus:ring-2 focus:ring-dev-primary/40 outline-none" placeholder="Email" data-placeholder-en="Email" data-placeholder-ar="البريد الإلكتروني" required>
+                        <input type="text" class="form-field w-full px-4 py-3.5 rounded-xl border border-slate-200 dark:border-dev-border bg-slate-50 dark:bg-dev-deeper text-slate-900 dark:text-dev-heading placeholder:text-slate-400 focus:ring-2 focus:ring-dev-primary/40 outline-none" placeholder="Subject" data-placeholder-en="Subject" data-placeholder-ar="الموضوع" required>
+                        <textarea rows="5" class="form-field w-full px-4 py-3.5 rounded-xl border border-slate-200 dark:border-dev-border bg-slate-50 dark:bg-dev-deeper text-slate-900 dark:text-dev-heading placeholder:text-slate-400 focus:ring-2 focus:ring-dev-primary/40 outline-none resize-y min-h-[120px]" placeholder="Message" data-placeholder-en="Message" data-placeholder-ar="الرسالة" required></textarea>
+                        <button type="submit" class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-2xl bg-gradient-dev text-white font-bold glow-primary hover:scale-[1.02] transition-transform">
+                            <span data-text-en="Send Message" data-text-ar="إرسال الرسالة">Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-200 dark:border-dev-border py-10 bg-white dark:bg-dev-deeper">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-start">
+                <p class="text-slate-600 dark:text-dev-body text-sm">
+                    <span class="footer-copy">© 2026 Developer Portfolio</span>
+                    <span class="mx-2 opacity-50">•</span>
+                    <span data-text-en="Built with passion and code" data-text-ar="بُني بالشغف والكود">Built with passion and code</span>
+                </p>
+                <p class="text-sm mt-2 text-slate-500 dark:text-dev-muted">
+                    <span data-text-en="by" data-text-ar="بواسطة">by</span>
+                    <a href="https://www.linkedin.com/in/mohammad-abu-sakour-kn" target="_blank" rel="noopener noreferrer" class="ms-2 font-bold text-dev-primary hover:underline inline-flex items-center gap-1"><i class="fas fa-code"></i> Kan3an</a>
+                </p>
+            </div>
+            <div class="flex gap-3 footer-social">
+                <a href="https://www.linkedin.com/in/mohammad-abu-sakour-kn" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-dev-border flex items-center justify-center text-slate-600 dark:text-dev-body hover:text-dev-primary hover:border-dev-primary/40 transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-dev-border flex items-center justify-center text-slate-600 dark:text-dev-body hover:text-dev-primary hover:border-dev-primary/40 transition-colors"><i class="fab fa-github"></i></a>
+                <a href="#" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-dev-border flex items-center justify-center text-slate-600 dark:text-dev-body hover:text-dev-primary hover:border-dev-primary/40 transition-colors"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
